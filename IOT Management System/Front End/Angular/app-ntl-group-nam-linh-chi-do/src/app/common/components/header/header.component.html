@@ -1,0 +1,26 @@
+<div class="row start-xs middle-xs">
+  <div class="header-text col-xs-12 col-sm-6 center-xs start-sm">
+    NTL Group - Nắm Linh Chi Đỏ
+  </div>
+
+  <div class="header-account col-xs-12 col-sm-6 center-xs end-sm">
+    <span *ngIf="currentUser">
+      {{ currentUser.email }}
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateToUserDetailsComponent()">
+          <mat-icon>info</mat-icon>
+          <span>User Details</span>
+        </button>
+
+        <button mat-menu-item (click)="signOut()">
+          <mat-icon>repeat</mat-icon>
+          <span>Switch User</span>
+        </button>
+      </mat-menu>
+    </span>
+  </div>
+</div>

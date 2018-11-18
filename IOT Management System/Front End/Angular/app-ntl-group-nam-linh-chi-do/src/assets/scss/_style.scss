@@ -1,0 +1,74 @@
+@import "./variable";
+@import "./mixin";
+@import "./override";
+@import "./theme";
+
+* {
+  font-family: "Ubuntu", sans-serif;
+
+  @include scrollbars(0.5em, slategray);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
+  app-root {
+    app-header {
+      div.row {
+        margin: 0;
+        padding: 10px;
+        background-color: rgba($color: #000000, $alpha: 1);
+
+        div.header-text {
+          font-size: 25px;
+          font-weight: bold;
+          color: $redColor;
+          padding: 10px;
+        }
+
+        div.header-account {
+          font-size: 13px;
+          color: $redColor;
+        }
+      }
+    }
+
+    app-navigation {
+      mat-toolbar {
+        span.navigation-text {
+          font-size: 16px;
+        }
+      }
+    }
+
+    app-login {
+      mat-card {
+        margin: 50px;
+
+        mat-card-header {
+          div.mat-card-header-text {
+            margin-left: 0 !important;
+          }
+        }
+      }
+    }
+
+    app-user-details {
+      mat-card {
+        margin: 50px;
+      }
+    }
+
+    app-footer {
+      div.footer-text {
+        font-size: 13px;
+        background-color: rgba($color: #000000, $alpha: 1);
+        color: $redColor;
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  }
+}

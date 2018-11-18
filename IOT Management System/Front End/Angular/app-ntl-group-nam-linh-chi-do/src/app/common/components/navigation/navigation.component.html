@@ -1,0 +1,32 @@
+<mat-toolbar color="warn">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+
+    <button mat-menu-item (click)="navigateToSensorsComponent()">
+      <mat-icon>memory</mat-icon>
+      <span>Sensors</span>
+    </button>
+
+    <button mat-menu-item (click)="navigateToDevicesComponent()">
+      <mat-icon>device_hub</mat-icon>
+      <span>Devices</span>
+    </button>
+
+    <button mat-menu-item (click)="navigateToTaskListComponent()">
+      <mat-icon>ballot</mat-icon>
+      <span>Task List</span>
+    </button>
+
+    <button mat-menu-item (click)="navigateToReportsComponent()">
+      <mat-icon>collections_bookmark</mat-icon>
+      <span>Reports</span>
+    </button>
+  </mat-menu>
+
+  <span class="navigation-text" [innerHTML]="navigationText"></span>
+</mat-toolbar>
+
+<mat-progress-bar mode="indeterminate" *ngIf="loadingStatus"></mat-progress-bar>
